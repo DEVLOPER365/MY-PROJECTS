@@ -1,0 +1,89 @@
+str1=input("enter the string:-")
+print(str1)
+list1=str1.split()
+print(list1)
+maxlen=0
+for i in range(len(list1)):
+ if(maxlen<len(list1[i])):
+ maxlen=len(list1[i])
+print("the longest length is:-",maxlen)
+print("the word with longest length is:-")
+for j in range(len(list1)):
+ if len(list1[j])==maxlen:
+ print(list1[j])
+OUTPUT:
+enter the string:- Hello my name is -MYNAME
+Hello my name is -MYNAME
+['Hello', 'my', 'name', 'is', '-MYNAME ']
+the longest length is:-
+the word with longest length is:-
+-MY NAME
+#To determine the frequency of occurance of particular character in a
+string
+str2=input("enter the string:-")
+char=input("enter the chracter:-")
+count=0
+for i in range(len(str2)):
+ if(char==str2[i]):
+ count+=1
+print("charcter",char,"present",count,"times in given string")
+OUTPUT:
+enter the string:-Hello my name is MYNAME
+enter the chracter:-i
+charcter i present 2 times in given string
+#To check whether the given string is palindrome or not
+def ispalindrome(str3):
+ for i in range(int(len(str3)/2)):
+ if str3[i]!=str3[len(str3)-i-1]:
+ return False
+ return True
+str3=input("enter the string:-")
+ans=ispalindrome(str3)
+if (ans):
+ print("string is palindrome")
+else:
+ print("string is not palindrome")
+OUTPUT:
+enter the string:-nitin
+string is palindrome
+
+#To display index of first appearnce of the substring
+str4=input("enter the string")
+substr1=input("enter the substring:-")
+j=0
+for i in range(len(str4)):
+ if str4[i]==substr1[j]:
+ j=j+1
+ if j==len(substr1):
+ index=i-(len(substr1)-1)
+ break;
+ else:
+ j=0
+print("substring index:-",index)
+OUTPUT:
+enter the string I am studying FDS
+enter the substring:-FDS
+substring index:- 15
+#To count the occurance of each word in a given string
+str5=input("enter the string:-")
+list2=str5.split()
+setlist=set(list2)
+list3=list(setlist)
+print(list2)
+print(list3)
+list4=[]
+list5=[]
+for i in range(len(list3)):
+ counter=0
+ for j in range(len(list2)):
+ if list3[i]==list2[j]:
+ counter+=1
+ list4=list3[i],counter
+ list5.append(list4)
+print(list5)
+OUTPUT:
+enter the string:-Dreams do not work until you do
+['Dreams', 'do', 'not', 'work', 'until', 'you', 'do']
+['you', 'not', 'Dreams', 'do', 'work', 'until']
+[('you', 1), ('not', 1), ('Dreams', 1), ('do', 2), ('work', 1), ('until',
+1)]
